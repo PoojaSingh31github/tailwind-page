@@ -92,6 +92,35 @@ const Page = () => {
           </button>
         </div>
         {/*  */}
+
+        {/* tryimg for responsiveness */}
+        <div className="bg-red-200 flex relative">
+          <div className="w-2/5">
+            <Image src={rect1} alt={"rect1"} />
+          </div>
+          <div className="bg-blue-200 w-3/5 px-16 py-2">
+            <h3 className="text-blue-500 pt-3 pr-3 pb-2 font-bold">
+              know more about us
+            </h3>
+            <p>
+              At <b>StayBook Travel,</b> we're passionate about making your
+              travel dreams a reality. From luxurious hotel stays to adventurous
+              tours, we're here to help you discover, book, and experience the
+              world with ease. With our personalized service and commitment to
+              transparency, trust StayBook Travel to be your ultimate travel
+              companion. Start planning your next adventure today!
+            </p>
+
+            <br />
+            <button className="bg-blue-400 text-white rounded-md float-right mr-7 mb-5 pl-7 pr-7">
+              know more
+            </button>
+          </div>
+          <div className="absolute top-40 left-32">
+            <Image src={rect2} alt={"rect2"} />
+          </div>
+        </div>
+
         <div className="w-4/5 relative h-96">
           <div className="bg-pink-100 ">
             <div className="w-3/5 float-right bg-pink-100 pl-40 pr-10 pt-10 ">
@@ -121,6 +150,8 @@ const Page = () => {
             </div>
           </div>
         </div>
+
+        {/* till here  */}
         {/*  */}
 
         <div className="mt-36 text-center mb-4">
@@ -131,7 +162,7 @@ const Page = () => {
             {Array.from({
               length: 3,
             }).map((value, index: number) => (
-              <div className="h-full rounded-xl shadow-md">
+              <div key={index} className="h-full rounded-xl shadow-md">
                 <Image
                   className="w-full h-full object-cover rounded-t-xl"
                   src={rect3}
@@ -230,110 +261,158 @@ const Page = () => {
       </div>
       <div className=""></div>
       {/* infinity scroll slider */}
-      <div className="h-36 bg-red-400 flex flex-row">
-        <div className="h-16 w-16 bg-white rounded-full">
-          <Image
-            className="w-10 h-10 items-center flex justify-center"
-            src={ellipse8}
-            alt={"ellipse1"}
-          />
-          <p className="text-white text-sm">Best Destination</p>
+      <div>
+        <h2 className="text-center mb-4 text-primary font-extrabold ">
+          facility that we provide
+        </h2>
+        <div className="h-40 bg-red-400 flex flex-row">
+          {Array.from({ length: 8 }).map((value, index: number) => (
+            <div key={index} className="py-2 px-8">
+              <div className="h-20 w-20 bg-white rounded-full flex justify-center items-center">
+                <Image className="w-10 h-10 " src={ellipse8} alt={"ellipse1"} />
+              </div>
+              <p className="text-white text-xs pt-2">Best Destination</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/*  */}
-      <div className="flex justify-center items-center flex-col">
+      {/* grid one */}
+      <div className="container mx-auto px-10">
         <div>
           <h3 className="text-center mb-4 text-blue-500 font-extrabold">
             Explore the beauty of India
           </h3>
-          <div className="flex m-1">
-            <div className="w-1/4 m-1">
-              <Image src={destiny1} alt={"raj"} />
-            </div>
-            <div className="w-1/4 m-1">
-              <Image src={destiny1} alt={"raj"} />
-            </div>
-            <div className="w-2/4 m-1">
-              <Image src={destiny2} alt={"raj"} />
-            </div>
-          </div>
-          <div className="flex m-1">
-            <div className="w-2/5 m-1">
-              <Image src={destiny3} alt={"raj"} />
-            </div>
-            <div className="w-3/5 m-1">
-              <Image src={destiny4} alt={"raj"} />
-            </div>
-          </div>
-          <div className="flex m-1">
-            <div className="w-1/4 m-1">
-              <Image src={destiny1} alt={"raj"} />
-            </div>
-            <div className="w-2/4 m-1">
-              <Image src={destiny2} alt={"raj"} />
-            </div>
-            <div className="w-1/4 m-1">
-              <Image src={destiny1} alt={"raj"} />
-            </div>
-          </div>
-          <div className="flex m-1">
-            <div className="w-2/4 m-1">
-              <Image src={destiny3} alt={"raj"} />
-            </div>
-            <div className="w-2/4 m-1">
-              <Image src={destiny4} alt={"raj"} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/*  */}
-
-      <div className="bg-blue-400 ">
-        <div className="w-2/5">
-          <Image src={rect10} alt={"rect10"} />
-        </div>
-        <div className="3/5">
-          <h1>100% Best services</h1>
-          <h1>with our experience we will serve you </h1>
-          <p>
-            Choose us for seamless travel planning, unbeatable deals, and
-            unparalleled customer service. Let us make your dream vacation a
-            reality.
-          </p>
-          <div>
+          <div className="grid grid-cols-4 gap-4">
+            {/* {Array.from({
+              length: 10,
+            }).map((value, index: number) => ( */}
             <div>
-              <h1>2570 +</h1>
-              <h2>Customers</h2>
+              <Image src={destiny1} alt={"raj"} />
             </div>
-            <hr />
+            <div>
+              <Image src={destiny1} alt={"raj"} />
+            </div>
+            <div className="col-span-2">
+              <Image src={destiny2} alt={"raj"} />
+            </div>
+            <div className="col-span-2">
+              <Image src={destiny3} alt={"raj"} />
+            </div>
+            <div className="col-span-2">
+              <Image src={destiny4} alt={"raj"} />
+            </div>
+            <div>
+              <Image src={destiny1} alt={"raj"} />
+            </div>
+            <div className="col-span-2">
+              <Image src={destiny2} alt={"raj"} />
+            </div>
+            <div>
+              <Image src={destiny1} alt={"raj"} />
+            </div>
+            <div className="col-span-2">
+              <Image src={destiny3} alt={"raj"} />
+            </div>
+            <div className="col-span-2">
+              <Image src={destiny4} alt={"raj"} />
+            </div>
+            {/* ))} */}
           </div>
         </div>
       </div>
 
-      <footer className="bg-blue-400 ">
+      {/* girl  */}
+      <div></div>
+
+      {/* taj mahal  */}
+      <div className="container mx-auto px-10">
+        <div className="flex">
+          <div className="w-2/4">
+            <Image src={rect10} alt={"rect10"} />
+          </div>
+          <div className="2/4 flex flex-col justify-center items-start px-28">
+            <div>
+              <h1 className="font-extrabold pb-1">100% Best services</h1>
+              <h1 className="text-primary font-bold pb-2 text-lg">
+                with our experience we will serve you{" "}
+              </h1>
+              <p className="pb-10">
+                Choose us for seamless travel planning, unbeatable deals, and
+                unparalleled customer service. Let us make your dream vacation a
+                reality.
+              </p>
+            </div>
+
+            <div className="flex gap-7">
+              <div className="border-r-primary border-r-2 pr-5 ">
+                <h1 className="text-primary font-bold p-1 ">2570 +</h1>
+                <h2>Customers</h2>
+              </div>
+              <div className="border-r-primary border-r-2 pr-5 ">
+                <h1 className="text-primary font-bold p-1 ">2570 +</h1>
+                <h2>Customers</h2>
+              </div>
+              <div className="border-r-primary border-r-2 pr-5 ">
+                <h1 className="text-primary font-bold p-1 ">2570 +</h1>
+                <h2>Customers</h2>
+              </div>
+              <div className="">
+                <h1 className="text-primary font-bold p-1 ">2570 +</h1>
+                <h2>Customers</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* query one  */}
+      <div className="bg-primary2 flex p-14 justify-around items-center mt-8 ">
+        <div className="w-2/5 p-10">
+          <h1 className="font-extrabold text-xl text-white px-10">
+            Ask your queries
+            <br /> by send your message
+          </h1>
+        </div>
+        <div className="relative w-3/5 p-10">
+          <Input
+            inputkey={"query"}
+            inputPlaceholder={"Ask your queries"}
+            inputType={"text"}
+            inputValue={undefined}
+            inputLable={""}
+          />
+          <button className="absolute top-9 right-32 bg-primary2 text-white rounded text-sm px-3">
+            send
+          </button>
+        </div>
+      </div>
+
+      {/* footer */}
+      <footer className="bg-blue-400 flex justify-around text-white mt-8 p-28">
         <div>
-          <h1>company</h1>
+          <h1 className="pb-5">company</h1>
           <p>about us </p>
           <p>about us </p>
           <p>about us </p>
           <p>about us </p>
         </div>
         <div>
-          <h1>policy</h1>
+          <h1 className="pb-5">policies</h1>
           <p>cancellation policy</p>
           <p>cancellation policy</p>
           <p>cancellation policy</p>
         </div>
         <div>
-          <h1>Social Media</h1>
-          <Image src={sm1} alt={"insta"} />
-          <Image src={sm2} alt={"fb"} />
-          <Image src={sm3} alt={"twitter"} />
+          <h1 className="pb-5">Social Media</h1>
+          <div className="flex">
+            <Image src={sm1} alt={"insta"} />
+            <Image src={sm2} alt={"fb"} />
+            <Image src={sm3} alt={"twitter"} />
+          </div>
         </div>
-        <div>
-          <div className="bg-white rounded-full"></div>
+        <div className="items-center text-center pt-5">
+          <div className=" w-20 h-20 bg-white rounded-full"></div>
+          <h1 className="text-lg">Logo</h1>
         </div>
       </footer>
     </div>
