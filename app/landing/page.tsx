@@ -26,7 +26,9 @@ import destiny1 from "@/public/images/Rectangle 936.svg";
 import destiny2 from "@/public/images/Rectangle 937.svg";
 import destiny3 from "@/public/images/Rectangle 938.svg";
 import destiny4 from "@/public/images/Rectangle 939.svg";
-import girl from "@/public/images/26128 2.svg";
+import girl1 from "@/public/images/Group 1266.svg";
+import girl2 from "@/public/images/Group 1267.svg";
+
 import rect10 from "@/public/images/Rectangle 935.svg";
 import Image from "next/image";
 import Button from "../components/button/page";
@@ -99,8 +101,8 @@ const Page = () => {
         </div>
 
         {/* phone veiw only need to works more */}
-        <div className="relative mt-16">
-          <div className="rounded-lg">
+        <div className="relative mt-16 lg:hidden">
+          <div className="rounded-lg ">
             <Image width={990} src={rect33} alt={"rect33"} />
           </div>
           <div className="px-7 py-4 absolute top-1 flex flex-col justify-center items-center rounded-lg">
@@ -314,20 +316,21 @@ const Page = () => {
         </div>
 
         {/*  taxi part  phone and laptop */}
-
         <div className="relative mt-16">
           <div className="hidden lg:block">
             <Image src={taxi} alt={"texi"} />
           </div>
-          <div className="lg:hidden">
-            <Image src={taxi1} alt={"texi"} />
+          <div className="w-full lg:hidden ">
+            <Image width={890} src={taxi1} alt={"texi"} />
           </div>
-          <div className=" p-3 absolute top-1">
-            <h3 className="font-bold">Seamless Travel Connections</h3>
-            <h3 className="text-blue-500 font-bold text-2xl pt-2 pb-2">
+          <div className="p-2 absolute top-1 py-5 px-5 md:justify-center md:items-start md:flex md:flex-col">
+            <h3 className="font-bold text-2xl py-2">
+              Seamless Travel Connections
+            </h3>
+            <h3 className="text-blue-500 font-bold text-3xl py-4 tracking-wide">
               Book your cab and tickets for your best travel experience
             </h3>
-            <p>
+            <p className="hidden lg:flex w-4/6 ">
               At Staybook Travel, we ensure your journey is smooth from start to
               finish. In addition to offering enticing package trips, we provide
               convenient booking options for cab, train, and flight tickets.
@@ -337,20 +340,29 @@ const Page = () => {
               while we take care of the logistics. Book your tickets with us and
               embark on a hassle-free adventure!
             </p>
+            <p className="py-4 tracking-wide text-2xl lg:hidden ">
+              Book cab, train, and flight tickets easily with StayBook Travel.
+              Our comprehensive services ensure hassle-free adventures, letting
+              you focus on making unforgettable memories. Start your journey
+              with us today
+            </p>
           </div>
         </div>
       </div>
-      <div className=""></div>
+
       {/* infinity scroll slider */}
       {/* <div>
-        <h2 className="text-center mb-4 text-primary font-extrabold">
+        <h2 className="text-center mb-4 text-primary font-extrabold text-3xl mt-10">
           facility that we provide
         </h2>
-        <div className="h-40 bg-red-400 flex flex-row">
+        <div className="h-60 bg-red-400 flex flex-row">
           {Array.from({ length: 8 }).map((value, index: number) => (
-            <div key={index} className="py-2 px-8">
-              <div className="h-20 w-20 bg-white rounded-full flex justify-center items-center">
-                <Image className="w-10 h-10 " src={ellipse1} alt={"ellipse1"} />
+            <div
+              key={index}
+              className="px-12 flex flex-col justify-evenly items-center"
+            >
+              <div className="h-36 w-36 bg-white rounded-full flex justify-around items-center">
+                <Image className="w-14 h-14 " src={ellipse1} alt={"ellipse1"} />
               </div>
               <p className="text-white text-xs pt-2">Best Destination</p>
             </div>
@@ -359,15 +371,15 @@ const Page = () => {
       </div> */}
 
       {/* grid one */}
-      <div className="container mx-auto px-10">
+      {/* <div className="container mx-auto px-10">
         <div>
           <h3 className="text-center mb-4 text-blue-500 font-extrabold">
             Explore the beauty of India
           </h3>
           <div className="grid grid-cols-1 gap-4 bg-red-500 sm:grid-cols-2 md:grid-cols-3 lg:grid-col-4">
-            {/* {Array.from({
+            {Array.from({
               length: 10,
-            }).map((value, index: number) => ( */}
+            }).map((value, index: number) => ( \
             <div>
               <Image
                 className="w-full h-full object-cover"
@@ -438,34 +450,74 @@ const Page = () => {
                 alt={"raj"}
               />
             </div>
-            {/* ))} */}
+             ))} 
+          </div>
+        </div>
+      </div> */}
+
+      {/* girl  */}
+
+      <div className="relative mt-10 flex justify-center items-center">
+        <div className="hidden lg:block ">
+          <Image src={girl1} alt={"girl"} />
+        </div>
+        <div className="lg:hidden">
+          <Image width={440} src={girl2} alt={"girl"} />
+        </div>
+        <div className="absolute top-4 left-32 md:left-48 lg:top-44 lg:left-2/4">
+          <p className="text-white font-bold text-3xl lg:pt-14">
+            Enjoy your best weekend <br />
+            in a beautiful place
+          </p>
+          <div className="flex py-3 justify-around items-center">
+            <button className="rounded-2xl px-7 py-2 border-white border-2 text-white font-bold hover:bg-primary2 hover:border-0">
+              Find a place
+            </button>
+            <button className="rounded-2xl px-7 py-2 border-white border-2 text-white font-bold hover:bg-primary2 hover:border-0">
+              contact us
+            </button>
           </div>
         </div>
       </div>
 
-      {/* girl  */}
-      <div></div>
-
       {/* taj mahal  */}
-      {/* <div className="container mx-auto px-10">
-        <div className="flex">
-          <div className="w-2/4">
+      <div className="container mx-auto px-10 flex justify-center items-center mt-10">
+        <div className="flex flex-col lg:flex-row">
+          <div className="lg:w-2/5">
             <Image src={rect10} alt={"rect10"} />
           </div>
-          <div className="2/4 flex flex-col justify-center items-start px-28">
-            <div>
+          <div className="lg:w-3/5 lg:px-24 lg:py-4 px-2 justify-center items-center ">
+            <div className="flex justify-center items-center flex-col pt-5">
               <h1 className="font-extrabold pb-1">100% Best services</h1>
               <h1 className="text-primary font-bold pb-2 text-lg">
                 with our experience we will serve you{" "}
               </h1>
               <p className="pb-10">
-                Choose us for seamless travel planning, unbeatable deals, and
-                unparalleled customer service. Let us make your dream vacation a
-                reality.
+                Choose us for seamless travel planning, unbeatable deals,
+                <br /> and unparalleled customer service. Let us make your dream
+                vacation a reality.
               </p>
+              <div className="grid grid-cols-2 gap-6 lg:hidden">
+                <button className="px-3 py-2 bg-primary2 text-white rounded-lg">
+                  <h1 className="font-bold">2570 +</h1>
+                  <p>Customers</p>
+                </button>
+                <button className="px-3 py-2 bg-primary2 text-white rounded-lg">
+                  <h1 className="font-bold">2570 +</h1>
+                  <p>Customers</p>
+                </button>
+                <button className="px-3 py-2 bg-primary2 text-white rounded-lg">
+                  <h1 className="font-bold">2570 +</h1>
+                  <p>Customers</p>
+                </button>
+                <button className="px-3 py-2 bg-primary2 text-white rounded-lg">
+                  <h1 className="font-bold">2570 +</h1>
+                  <p>Customers</p>
+                </button>
+              </div>
             </div>
 
-            <div className="flex gap-7">
+            <div className="hidden gap-7 lg:flex ">
               <div className="border-r-primary border-r-2 pr-5 ">
                 <h1 className="text-primary font-bold p-1 ">2570 +</h1>
                 <h2>Customers</h2>
@@ -485,7 +537,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* query one  */}
       <div className="bg-primary2 flex p-14 justify-around items-center mt-8 ">
         <div className="w-2/5 p-10">
